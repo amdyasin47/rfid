@@ -1,10 +1,7 @@
 /* ------------------------------------------------------------------------
- * Created by: Tauseef Ahmad
- * Created on: 17 July, 2022
+ * Created by: Md Yasin Arafat
+ * Created on: 22 December, 2023
  *  
- * Tutorial: https://youtu.be/Bgs_3F5rL5Q
- * ------------------------------------------------------------------------
- * Download Resources
  * ------------------------------------------------------------------------
  * Preferences--> Aditional boards Manager URLs : 
  * For ESP8266 and NodeMCU - Board Version 2.6.3
