@@ -1,6 +1,7 @@
 /* ------------------------------------------------------------------------
  * Created by: Md Yasin Arafat
  * Created on: 22 December, 2023
+ * Contract Number: +8801931974157
  *  
  * ------------------------------------------------------------------------
  * Preferences--> Aditional boards Manager URLs : 
@@ -11,7 +12,7 @@
  * https://github.com/jbuszkie/HTTPSRedirect
  * Example Arduino/ESP8266 code to upload data to Google Sheets
  * Follow setup instructions found here:
- * https://github.com/StorageB/Google-Sheets-Logging
+ * https://github.com/amdyasin47/rfid-students-attendents-system-on-google-sheetwith-ota-update/tree/main
  * ------------------------------------------------------------------------*/
 
 #include <WiFiManager.h>  // https://github.com/tzapu/WiFiManager
@@ -34,7 +35,7 @@ const char *ssid = "";
 const char *password = "";
 //---------------------------------------------------------------------------------------------------------
 // Enter command (insert_row or append_row) and your Google Sheets sheet name (default is Sheet1):
-String payload_base = "{\"command\": \"insert_row\", \"sheet_name\": \"ENT\", \"values\": ";
+String payload_base = "{\"command\": \"insert_row\", \"sheet_name\": \"sheet1\", \"values\": ";
 String payload = "";
 //---------------------------------------------------------------------------------------------------------
 // Google Sheets setup (do not edit)
