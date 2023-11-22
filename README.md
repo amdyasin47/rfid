@@ -10,11 +10,15 @@ Below are step by step instructions to begin logging data using an ESP8266 modul
 
 2. Type the following text into each of the following cells:
 
-   - Cell A1: `Date`
-   - Cell B1: `Time`
-   - Cell C1: `value0`
-   - Cell D1: `value1`
-   - Cell E1: `value2`
+   - Cell A1: `Students ID`
+   - Cell B1: `Time IN`
+   - Cell C1: `Time OUT`
+   - Cell D1: `Date`
+   - Cell E1: `Name`
+   - Cell F1: `Number`
+   - Cell G1: `Semester`
+   - Cell H1: `Shift`
+   - Cell I1: `Tecnology`
    <br>
 
    ![Selection_004](https://user-images.githubusercontent.com/44729718/115277764-46881380-a10a-11eb-9be4-b6fbe7ea7091.png)
