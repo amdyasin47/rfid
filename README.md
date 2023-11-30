@@ -114,4 +114,4 @@ When making changes to the Google Scripts code, you will need to click `Save` th
 
 #### I hope you found this tutorial helpful!
 
-<a href="+8801931974157" target="_blank"><img src="https://t4.ftcdn.net/jpg/04/63/63/59/240_F_463635935_IweuYhCqZRtHp3SLguQL8svOVroVXvvZ.jpg)https://t4.ftcdn.net/jpg/04/63/63/59/240_F_463635935_IweuYhCqZRtHp3SLguQL8svOVroVXvvZ.jpg" alt="For Help Call Me" style="height: 36px !important;width: 131px !important;" ></a>
+<a href="https://wa.link/hyi26t" target="_blank"><img src="https://t4.ftcdn.net/jpg/04/63/63/59/240_F_463635935_IweuYhCqZRtHp3SLguQL8svOVroVXvvZ.jpg)https://t4.ftcdn.net/jpg/04/63/63/59/240_F_463635935_IweuYhCqZRtHp3SLguQL8svOVroVXvvZ.jpg" alt="For Help Call Me" style="height: 36px !important;width: 131px !important;" ></a>
