@@ -114,4 +114,4 @@ When making changes to the Google Scripts code, you will need to click `Save` th
 
 #### I hope you found this tutorial helpful!
 
-<a href="https://wa.link/hyi26t" target="_blank"><img src="https://raw.githubusercontent.com/amdyasin47/A-ll-files-And-Photos/main/whatsapp-icon-logo-element-sign-green.jpg" alt="For Help Call Me" style="height: 50px !important;width: 50px !important;" ></a>
+<a href="https://wa.link/hyi26t" target="_blank"><img src="https://raw.githubusercontent.com/amdyasin47/A-ll-files-And-Photos/main/whatsapp-icon-logo-element-sign-green.jpg" alt="For Help Call Me" style="height: 100px !important;width: 100px !important;" ></a>
