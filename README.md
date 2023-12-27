@@ -20,7 +20,7 @@ Below are step by step instructions to begin logging data using an ESP8266 modul
    - Cell H1: `Shift`
    - Cell I1: `Tecnology`
    <br>
-   *Note:  Please! Give the sheet Name As Yours Technology Name `Electronics -> ENT`.*
+
 
    ![Selection_00](https://raw.githubusercontent.com/amdyasin47/A-ll-files-And-Photos/main/Google-Sheet-Ready.png)
 
@@ -68,6 +68,7 @@ Below are step by step instructions to begin logging data using an ESP8266 modul
 10. From the script editor, click `Save` and then `Run`. 
 
    *Note:  Nothing will happen when you click run but you must do that once before continuing.*
+      *Note:  Please! Give the sheet Name As Yours Technology Name `Electronics -> ENT`.*
  
 
 
