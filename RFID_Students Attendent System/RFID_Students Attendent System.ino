@@ -35,7 +35,7 @@ const char *ssid = "";
 const char *password = "";
 //---------------------------------------------------------------------------------------------------------
 // Enter command (insert_row or append_row) and your Google Sheets sheet name (default is Sheet1):
-String payload_base = "{\"command\": \"insert_row\", \"sheet_name\": \"sheet1\", \"values\": ";
+String payload_base = "{\"command\": \"insert_row\", \"sheet_name\":";
 String payload = "";
 //---------------------------------------------------------------------------------------------------------
 // Google Sheets setup (do not edit)
@@ -47,6 +47,11 @@ HTTPSRedirect *client = nullptr;
 //------------------------------------------------------------
 // Declare variables that will be published to Google Sheets
 String student_id;
+String student_name;
+String phone_number;
+String semester;
+String shift;
+String tecnology;
 //------------------------------------------------------------
 int blocks[] = { 4, 5, 6, 8, 9, 10 };
 #define total_blocks (sizeof(blocks) / sizeof(blocks[0]))
@@ -63,8 +68,8 @@ MFRC522::StatusCode status;
 int blockNum = 2;
 /* Create another array to read data from Block */
 /* Legthn of buffer should be 2 Bytes more than the size of Block (16 Bytes) */
-byte bufferLen = 20;
-byte readBlockData[20];
+byte bufferLen = 64;
+byte readBlockData[64];
 //--------------------------------------------------
 
 void configModeCallback(WiFiManager *myWiFiManager) {
@@ -76,10 +81,10 @@ void configModeCallback(WiFiManager *myWiFiManager) {
   lcd.clear();
   lcd.setCursor(0, 0);  //col=0 row=0
   lcd.print("Enter config mode");
-  lcd.setCursor(2, 1);  //col=0 row=0
-  lcd.print("RFID Config");
+  lcd.setCursor(4, 1);  //col=0 row=0
+  lcd.print("ESP8266");
 
-  WiFi.softAP("RFID Config", "123456789");
+  WiFi.softAP("ESP8266", "123456789");
   Serial.println(WiFi.softAPIP());
   //if you used auto generated SSID, print it
   Serial.println(myWiFiManager->getConfigPortalSSID());
@@ -251,7 +256,7 @@ void setupid() {
   // if ((analogRead(A0) > 512) && (digitalRead(10) == HIGH)) { runingsystem(); }
 
   digitalWrite(Buzzer, HIGH);
-  delay(400); 
+  delay(400);
 
   lcd.clear();
   lcd.setCursor(0, 0);  //col=0 row=0
@@ -259,7 +264,7 @@ void setupid() {
   lcd.setCursor(0, 1);  //col=0 row=0
   lcd.print("to write data...");
   delay(100);
-  digitalWrite(Buzzer, LOW); 
+  digitalWrite(Buzzer, LOW);
 
   /* Prepare the ksy for authentication */
   /* All keys are set to FFFFFFFFFFFFh at chip delivery from the factory */
@@ -297,10 +302,10 @@ void setupid() {
   Serial.println(mfrc522.PICC_GetTypeName(piccType));
 
   //------------------------------------------------------------------------------
-  byte buffer[20];
+  byte buffer[34];
   byte len;
   //wait until 50 seconds for input from serial
-  Serial.setTimeout(50000L);
+  Serial.setTimeout(60000L);
   //MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
   lcd.clear();
   lcd.setCursor(0, 0);  //col=0 row=0
@@ -309,9 +314,9 @@ void setupid() {
   lcd.print(" ending with #");
   Serial.println(F("---------------------------------------"));
   Serial.println(F("Enter Student ID, ending with #"));
-  len = Serial.readBytesUntil('#', (char *)buffer, 16);
+  len = Serial.readBytesUntil('#', (char *)buffer, 30);
   //add empty spaces to the remaining bytes of buffer
-  for (byte i = len; i < 16; i++) buffer[i] = ' ';
+  for (byte i = len; i < 30; i++) buffer[i] = ' ';
   blockNum = 4;
   WriteDataToBlock(blockNum, buffer);
   ReadDataFromBlock(blockNum, readBlockData);
@@ -330,8 +335,9 @@ void setupid() {
   lcd.print(" ending with #");
   Serial.println(F("---------------------------------------"));
   Serial.println(F("Enter Student Name, ending with #"));
-  len = Serial.readBytesUntil('#', (char *)buffer, 16);
-  for (byte i = len; i < 16; i++) buffer[i] = ' ';
+  len = Serial.readBytesUntil('#', (char *)buffer, 30);
+  //add empty spaces to the remaining bytes of buffer
+  for (byte i = len; i < 30; i++) buffer[i] = ' ';
   blockNum = 5;
   WriteDataToBlock(blockNum, buffer);
   ReadDataFromBlock(blockNum, readBlockData);
@@ -350,8 +356,9 @@ void setupid() {
   lcd.print(" ending with #");
   Serial.println(F("---------------------------------------"));
   Serial.println(F("Enter Mobile Number, ending with #"));
-  len = Serial.readBytesUntil('#', (char *)buffer, 16);
-  for (byte i = len; i < 16; i++) buffer[i] = ' ';
+  len = Serial.readBytesUntil('#', (char *)buffer, 30);
+  //add empty spaces to the remaining bytes of buffer
+  for (byte i = len; i < 30; i++) buffer[i] = ' ';
   blockNum = 6;
   WriteDataToBlock(blockNum, buffer);
   ReadDataFromBlock(blockNum, readBlockData);
@@ -370,8 +377,9 @@ void setupid() {
   lcd.print(" ending with #");
   Serial.println(F("---------------------------------------"));
   Serial.println(F("Enter Semester, ending with #"));
-  len = Serial.readBytesUntil('#', (char *)buffer, 16);
-  for (byte i = len; i < 16; i++) buffer[i] = ' ';
+  len = Serial.readBytesUntil('#', (char *)buffer, 30);
+  //add empty spaces to the remaining bytes of buffer
+  for (byte i = len; i < 30; i++) buffer[i] = ' ';
   blockNum = 8;
   WriteDataToBlock(blockNum, buffer);
   ReadDataFromBlock(blockNum, readBlockData);
@@ -390,8 +398,9 @@ void setupid() {
   lcd.print(" ending with #");
   Serial.println(F("---------------------------------------"));
   Serial.println(F("Enter Shift, ending with #"));
-  len = Serial.readBytesUntil('#', (char *)buffer, 16);
-  for (byte i = len; i < 16; i++) buffer[i] = ' ';
+  len = Serial.readBytesUntil('#', (char *)buffer, 30);
+  //add empty spaces to the remaining bytes of buffer
+  for (byte i = len; i < 30; i++) buffer[i] = ' ';
   blockNum = 9;
   WriteDataToBlock(blockNum, buffer);
   ReadDataFromBlock(blockNum, readBlockData);
@@ -410,8 +419,9 @@ void setupid() {
   lcd.print(" ending with #");
   Serial.println(F("---------------------------------------"));
   Serial.println(F("Enter Tacnology, ending with #"));
-  len = Serial.readBytesUntil('#', (char *)buffer, 16);
-  for (byte i = len; i < 16; i++) buffer[i] = ' ';
+  len = Serial.readBytesUntil('#', (char *)buffer, 30);
+  //add empty spaces to the remaining bytes of buffer
+  for (byte i = len; i < 30; i++) buffer[i] = ' ';
   blockNum = 10;
   WriteDataToBlock(blockNum, buffer);
   ReadDataFromBlock(blockNum, readBlockData);
@@ -443,6 +453,7 @@ void setupid() {
   delay(500);
   ESP.restart();
   delay(1000);
+  //runingsystem();
 }
 
 void runingsystem() {
@@ -539,13 +550,40 @@ void runingsystem() {
     }
     //*************************************************
     else if (i == total_blocks - 1) {
-      data = String((char *)readBlockData);
+      data = String((char*)readBlockData);
       data.trim();
+      tecnology = data;
       values += data + "\"}";
     }
     //*************************************************
-    else {
-      data = String((char *)readBlockData);
+    else if (i == 1) {
+      data = String((char*)readBlockData);
+      data.trim();
+      student_name = data;
+      values += data + ",";
+    }
+    //*************************************************
+    else if (i == 2) {
+      data = String((char*)readBlockData);
+      data.trim();
+      phone_number = data;
+      values += data + ",";
+    }
+    //*************************************************
+    else if (i == 3) {
+      data = String((char*)readBlockData);
+      data.trim();
+      semester = data;
+      values += data + ",";
+    }
+    //*************************************************
+    else if (i == 4) {
+      data = String((char*)readBlockData);
+      data.trim();
+      shift = data;
+      values += data + ",";
+    } else {
+      data = String((char*)readBlockData);
       data.trim();
       values += data + ",";
     }
@@ -553,7 +591,7 @@ void runingsystem() {
   //----------------------------------------------------------------
   // Create json object string to send to Google Sheets
   // values = "\"" + value0 + "," + value1 + "," + value2 + "\"}"
-  payload = payload_base + values;
+  payload = payload_base + "\"" + tecnology + "\", \"values\": " + values;
   //----------------------------------------------------------------
   lcd.clear();
   lcd.setCursor(0, 0);  //col=0 row=0
@@ -581,7 +619,7 @@ void runingsystem() {
     lcd.setCursor(0, 0);  //col=0 row=0
     lcd.print("ID: " + student_id);
     lcd.setCursor(0, 1);  //col=0 row=0
-    lcd.print("Student Present");
+    lcd.print(student_name);
   }
   //----------------------------------------------------------------
   else {
