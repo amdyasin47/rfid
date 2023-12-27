@@ -1,5 +1,5 @@
 // Enter Spreadsheet ID here
-var SS = SpreadsheetApp.openById('Enter Your Sheet ID here');
+var SS = SpreadsheetApp.openById('1RlECFsXZCKvfTGLjtJ4s51qpQLBWbyQeYRY_ZVgDuvg');
 var timezone = "GMT+6";
 var hours = 0
 var str = "";
