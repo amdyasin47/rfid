@@ -23,6 +23,7 @@ Below are step by step instructions to begin logging data using an ESP8266 modul
 
    ![Selection_00](https://raw.githubusercontent.com/amdyasin47/A-ll-files-And-Photos/main/Google-Sheet-Ready.png)
 
+*Note:  Please! Give the sheet Name As Yours Technology Name `Electronics -> ENT`.*
    
 3. Get the Spreadsheet ID from the URL.
 
