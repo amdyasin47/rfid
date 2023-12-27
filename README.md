@@ -79,9 +79,11 @@ Below are step by step instructions to begin logging data using an ESP8266 modul
     - Add your Wifi password
     - Replace the Google Script Deployment ID with the ID obtained in step 8 above
     
+    *Note:  The Sheet Name Is Yours `Technology Name From Your ID Card`.*
+   
     *Note:  The Deployment ID must be contained in quotation marks as shown in the example code. The Deployment ID can also be found by clicking `Deploy > Manage Deployments`.*
 
-3. Install the HTTPSRedirect library from here:
+4. Install the HTTPSRedirect library from here:
 
     https://github.com/electronicsguy/HTTPSRedirect
 
@@ -90,11 +92,11 @@ Below are step by step instructions to begin logging data using an ESP8266 modul
       
       *Note: For Arduino IDE 2.0 and above, the library directory is a subfolder named "libraries" at the path shown under File > Preferences > Sketchbook location. Create the "libraries" folder if it does not already exist (do not capitalize the L in the "libraries" folder name)*
     
-4. Delete the config.cpp file from the HTTPSRedirect folder.
+5. Delete the config.cpp file from the HTTPSRedirect folder.
 
    *Note: It must be deleted, not just renamed as it may cause errors when compiling the sketch.*
 
-5. Upload code to your ESP8266 module and watch data get published to your sheet!
+6. Upload code to your ESP8266 module and watch data get published to your sheet!
 
      
 ## Important Note
