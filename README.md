@@ -19,6 +19,7 @@ Below are step by step instructions to begin logging data using an ESP8266 modul
    - Cell G1: `Semester`
    - Cell H1: `Shift`
    - Cell I1: `Tecnology`
+   *Note:  Please! Give the sheet Name As Yours Technology Name `Electronics -> ENT`.*
    <br>
 
    ![Selection_00](https://raw.githubusercontent.com/amdyasin47/A-ll-files-And-Photos/main/Google-Sheet-Ready.png)
@@ -26,7 +27,6 @@ Below are step by step instructions to begin logging data using an ESP8266 modul
 
 
 
-            *Note:  Please! Give the sheet Name As Yours Technology Name `Electronics -> ENT`.*
 
 3. Get the Spreadsheet ID from the URL.
 
