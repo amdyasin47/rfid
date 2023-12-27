@@ -26,7 +26,7 @@ Below are step by step instructions to begin logging data using an ESP8266 modul
 
 
 
-*Note:  Please! Give the sheet Name As Yours Technology Name `Electronics -> ENT`.*
+            *Note:  Please! Give the sheet Name As Yours Technology Name `Electronics -> ENT`.*
 
 3. Get the Spreadsheet ID from the URL.
 
